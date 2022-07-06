@@ -1,0 +1,23 @@
+.autocomplete {
+  display: flex;
+  position: relative;
+  color: black;
+}
+
+.autocompleteInput:hover {
+  background: #ffffff69 !important;
+}
+.autocompleteInputDark:hover {
+  background: #ffffff0f !important;
+}
+.autocompleteInput::placeholder {
+  display: flex;
+  font-weight: 400;
+  font-size: 17px;
+  color: black;
+}
+.autocompleteInputDark::placeholder {
+  font-weight: 400;
+  font-size: 17px;
+  color: white;
+}

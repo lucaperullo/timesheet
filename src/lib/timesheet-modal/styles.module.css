@@ -1,0 +1,62 @@
+:root {
+  --expwidth: 270px;
+  --width: 120px;
+}
+.modal {
+  height: auto;
+}
+.autoCompleteCentered {
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.sidebar {
+  position: sticky;
+  z-index: 20;
+  left: 0;
+  height: 100%;
+}
+.boardContainer {
+  animation: fadeInSliding 0.5s ease-in-out;
+}
+.text {
+  font-size: 3rem;
+}
+.scrollRight {
+  transition: all 0.25s ease-in-out;
+}
+.scrollRight:hover {
+  transform: scale(1.3);
+  right: 5px;
+}
+.scrollLeft {
+  transition: all 0.25s ease-in-out;
+}
+.scrollLeft:hover {
+  transform: scale(1.3);
+  /* left: 125px; */
+}
+@keyframes fadeInSliding {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@media (max-width: 1200px) {
+  .modal {
+    height: 90%;
+  }
+  .scrollLeft,
+  .scrollRight {
+    display: none;
+  }
+  .text {
+    font-size: 1.8rem;
+    padding: 0 1rem;
+  }
+}

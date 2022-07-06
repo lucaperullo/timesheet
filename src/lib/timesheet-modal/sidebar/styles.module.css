@@ -1,0 +1,149 @@
+.sidebar_expanded {
+  width: 75px;
+  background-color: transparent;
+  margin: 0px;
+  transition: all 0.3s ease;
+}
+
+.sidebar_expanded_dark {
+  position: sticky;
+  width: 75px;
+  background-color: transparent;
+  top: 0;
+  left: 20px;
+  margin: 0px;
+  transition: all 0.3s ease;
+}
+.commessa {
+  background-color: #f1f1f1;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.commessa:hover {
+  background-color: #eaeaea;
+}
+.commessa_dark {
+  background-color: transparent;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.commessa_dark:hover {
+  background-color: #2c2a3d;
+}
+.row {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #7979794f;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 80px;
+  width: 100%;
+  position: sticky;
+  top: 0px;
+  z-index: 20;
+  background-color: #f1f1f1;
+  overflow: hidden;
+}
+.row_dark {
+  padding: 10px;
+  border-bottom: 1px solid #7979794f;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 80px;
+  width: 100%;
+  position: sticky;
+  top: 0px;
+  z-index: 20;
+  background-color: transparent;
+  overflow: hidden;
+}
+.expand {
+  display: none;
+}
+.autocomplete {
+  width: 100%;
+  height: 25px;
+  min-height: 25px;
+}
+.autocomplete span {
+  font-weight: 200;
+  font-size: 12px;
+}
+.clear {
+  width: 100%;
+  height: 25px;
+  min-height: 25px;
+}
+.clear span {
+  font-weight: 200;
+  font-size: 12px;
+}
+@media (max-width: 1200px) {
+  .expand {
+    width: 30px !important;
+    height: 30px !important;
+    padding: 0px !important;
+    min-width: 30px !important;
+    min-height: 30px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .sidebar {
+    width: 32px;
+
+    background-color: #f1f1f1;
+
+    padding-left: 0px;
+    top: 0;
+    left: 0;
+    border-right: 1px solid #e5e5e5;
+
+    margin: 0px;
+    transition: all 0.3s ease;
+  }
+  .sidebar_dark {
+    width: 32px;
+
+    background-color: transparent;
+
+    padding-left: 0px;
+    top: 0;
+    left: 0;
+    margin: 0px;
+    transition: all 0.3s ease;
+  }
+  .row,
+  .row_dark {
+    padding-left: 6px;
+  }
+  .autocomplete {
+    width: 20px !important;
+    height: 20px !important;
+
+    min-width: 20px !important;
+    min-height: 20px !important;
+    padding-inline-start: 0px !important;
+    padding-inline-end: 0px !important;
+  }
+  .autocomplete span {
+    display: none;
+  }
+  .clear {
+    width: 20px !important;
+    height: 20px !important;
+
+    min-width: 20px !important;
+    min-height: 20px !important;
+    padding-inline-start: 0px !important;
+    padding-inline-end: 0px !important;
+  }
+  .clear span {
+    display: none;
+  }
+}

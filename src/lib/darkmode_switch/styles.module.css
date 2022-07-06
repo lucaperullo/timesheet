@@ -1,0 +1,9 @@
+.colorModeSwitcher {
+  transition: all 0.25s ease;
+}
+.colorModeSwitcher:hover {
+  background-color: #82828230;
+}
+.colorModeSwitcher:focus {
+  box-shadow: none !important;
+}

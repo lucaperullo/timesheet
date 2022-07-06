@@ -1,0 +1,33 @@
+.autoCompleteCentered {
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.commessa {
+  animation: fadeInSlideFromRight 0.5s ease-in-out;
+}
+.button:focus {
+  box-shadow: none !important;
+}
+.buttonDelete {
+  background-color: transparent !important;
+  transition: all 0.3s ease-in-out;
+}
+.buttonDelete:focus {
+  box-shadow: none !important;
+}
+.buttonDelete:hover {
+  background-color: transparent !important;
+}
+.buttonDelete:hover > svg {
+  fill: #e84f53;
+}
+@keyframes fadeInSlideFromRight {
+  0% {
+    transform: translateX(120px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

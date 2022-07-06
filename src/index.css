@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700&family=Poppins&display=swap");
+
+@font-face {
+  font-family: "moontimeregular";
+  src: url("moon-time-font-webfont.woff2") format("woff2"),
+    url("moon-time-font-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+  height: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 20px !important;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+html {
+  overflow: hidden;
+}
+body {
+  height: 100vh !important;
+  width: 100vw !important;
+  background-image: url("./wallpapers/login.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-family: "Encode Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  overflowx: hidden;
+  /* transition: background-color 200ms linear; */
+  user-select: none; /* supported by Chrome and Opera */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+[data-amplify-authenticator][data-variation="modal"] {
+  overflow: hidden;
+}
+[data-amplify-router] {
+  background-image: url("./wallpapers/wa2.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+  min-width: 460px;
+  min-height: 360px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px;
+}
+.amplify-heading {
+  color: white !important;
+}
+[data-amplify-authenticator] [data-amplify-router] {
+  border: none !important;
+}
+[data-amplify-router] > div > div:nth-child(1) {
+  display: none;
+}
+[data-amplify-router] > div > div:nth-child(2) {
+  background-image: url("./wallpapers/wa2.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+  min-width: 460px;
+  min-height: 360px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px;
+}
+
+.amplify-button--primary {
+  margin-bottom: 60px !important;
+  background-color: #006481 !important;
+  border: 1px solid #ffe032 !important;
+}
+.amplify-button--primary:hover {
+  background-color: #ffe032 !important;
+  color: #000 !important;
+}
+.amplify-button--small {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 50% !important;
+  transform: translate(-50%, -10%) !important;
+  width: 200px !important;
+  background-color: transparent !important;
+  color: #0b6581 !important;
+  font-weight: 600 !important;
+}
+.amplify-button--small:hover {
+  text-decoration: underline !important;
+}
+
+.amplify-field-group__field-wrapper--horizontal input {
+  border: none;
+  transition: 0.25s ease;
+  background-color: white;
+}
+.amplify-field__show-password {
+  border-block-color: white !important;
+  border-right-color: white !important;
+  color: white !important;
+}
+.amplify-field__show-password:hover {
+  background-color: yellow !important;
+  color: black !important;
+}
+.amplify-field__show-password:focus {
+  background-color: yellow !important;
+  box-shadow: none !important;
+  color: black !important;
+  border-left: none !important;
+}
+#chakra-toast-manager-top-right {
+  z-index: 999999 !important;
+}
+
+.calendar-white::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+.chakra-modal__content-container {
+  z-index: 9999 !important;
+}
+@media (max-width: 1600px) {
+  body {
+    background-image: url("./wallpapers/login_mobile.webp");
+  }
+}
+@media (max-width: 700px) {
+  body {
+    background-image: url("./wallpapers/login.webp");
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    height: auto;
+    width: auto;
+    background: none;
+  }
+  [data-amplify-router] {
+    /* reset pw */
+
+    background-image: url("./wallpapers/login.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 100.1vh;
+    color: white;
+    border-radius: 0;
+    padding: 30px;
+    padding-top: 60%;
+  }
+  [data-amplify-router] > div > div:nth-child(2) {
+    /* main login */
+    background-image: url("./wallpapers/login.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    color: white;
+    border-radius: 0;
+    padding: 30px;
+    padding-top: 60%;
+  }
+  .amplify-button--small {
+    background-color: white !important;
+    color: #0b6581 !important;
+    font-weight: 600 !important;
+    position: relative !important;
+    left: 50% !important;
+    transform: translate(-105%, -50%) !important;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

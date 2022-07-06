@@ -1,0 +1,12 @@
+.text {
+  font-size: 2.5rem;
+}
+@media (max-width: 1220px) {
+  .resumeContainer {
+    width: 100% !important;
+  }
+  .text {
+    font-size: 1.8rem;
+    padding: 0 1rem;
+  }
+}

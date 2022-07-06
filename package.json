@@ -1,0 +1,60 @@
+{
+  "name": "timesheet2.0",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@aws-amplify/ui-react": "^2.19.0",
+    "@chakra-ui/react": "^1.8.8",
+    "@choc-ui/chakra-autocomplete": "^4.22.0",
+    "@emotion/react": "^11.0.0",
+    "@emotion/styled": "^11.0.0",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.0.1",
+    "@testing-library/user-event": "^14.1.0",
+    "@types/jest": "^25.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.4",
+    "@types/react-lottie": "^1.2.6",
+    "@types/react-typist": "^2.0.3",
+    "aws-amplify": "^4.3.24",
+    "chakra-react-select": "^4.0.3",
+    "flickity": "2.3.0",
+    "framer-motion": "^6.3.10",
+    "moment": "^2.29.3",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-icons": "^4.4.0",
+    "react-scripts": "5.0.1",
+    "react-typist": "^2.0.5",
+    "serve": "^13.0.2",
+    "typescript": "^4.6.3",
+    "web-vitals": "^0.2.2"
+  },
+  "scripts": {
+    "dev": "react-scripts start",
+    "build": "react-scripts build",
+    "analyze": "souce-map-explorer build/static/js/main.*",
+    "start": "npx serve -s build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "webpack-bundle-analyzer": "^4.5.0"
+  }
+}

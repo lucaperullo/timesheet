@@ -1,0 +1,7 @@
+.resumeContainer > div {
+  width: 100%;
+  box-shadow: none;
+}
+.tab {
+  box-shadow: none !important;
+}

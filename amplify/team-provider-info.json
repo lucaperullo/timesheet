@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-timesheet20-dev-120817-authRole",
+      "UnauthRoleArn": "arn:aws:iam::135172557954:role/amplify-timesheet20-dev-120817-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::135172557954:role/amplify-timesheet20-dev-120817-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-timesheet20-dev-120817-deployment",
+      "UnauthRoleName": "amplify-timesheet20-dev-120817-unauthRole",
+      "StackName": "amplify-timesheet20-dev-120817",
+      "StackId": "arn:aws:cloudformation:eu-west-1:135172557954:stack/amplify-timesheet20-dev-120817/8f70c0e0-fd13-11ec-8003-0222a13aab0b",
+      "AmplifyAppId": "d1pg3y42ueven"
+    },
+    "categories": {
+      "auth": {
+        "timesheet20c0ffcc1b": {}
+      }
+    }
+  }
+}
