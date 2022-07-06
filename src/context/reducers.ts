@@ -147,9 +147,7 @@ export const reducer = (
         loadingMessage: action.payload,
       };
     case "RESET_STATE":
-      return {
-        ...initialState,
-      };
+      return {};
 
     default:
       return state;

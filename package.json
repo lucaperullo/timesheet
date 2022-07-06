@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@aws-amplify/ui-react": "^2.19.0",
-    "@chakra-ui/react": "^1.8.8",
+    "@chakra-ui/react": "^2.2.1",
     "@choc-ui/chakra-autocomplete": "^4.22.0",
     "@emotion/react": "^11.0.0",
     "@emotion/styled": "^11.0.0",
@@ -19,6 +19,7 @@
     "@types/react-typist": "^2.0.3",
     "aws-amplify": "^4.3.24",
     "chakra-react-select": "^4.0.3",
+    "chakra-ui-date-input": "^1.0.0",
     "flickity": "2.3.0",
     "framer-motion": "^6.3.10",
     "moment": "^2.29.3",

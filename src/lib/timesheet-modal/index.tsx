@@ -3,6 +3,7 @@ import {
   useColorModeValue,
   Text,
   Button,
+  ScaleFade,
   IconButton,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
@@ -28,10 +29,7 @@ export default function TimesheetModal() {
   const bg2 = useColorModeValue("gray.100", "gray.700");
   const textColor = useColorModeValue("#000", "#fff");
   const [state, dispatch] = useStateValue();
-  const savedTimesheet =
-    !!state.timesheet_salvati &&
-    !!state.timesheet_salvati.days &&
-    state.timesheet_salvati;
+  const savedTimesheet = state.timesheet_salvati;
   const savedTimesheetDays = savedTimesheet.days;
   let days: any = [];
   const commesse: any[] = [];
@@ -163,9 +161,7 @@ export default function TimesheetModal() {
   };
 
   useEffect(() => {
-    if (!!state.timesheet_salvati && !!state.timesheet_salvati.days) {
-      extractTimesheetFromSavedTimesheet();
-    }
+    extractTimesheetFromSavedTimesheet();
     return () => {
       dispatch({
         type: "SET_MAPPED_SAVEDSHEET",
@@ -398,11 +394,12 @@ export default function TimesheetModal() {
             </Box>
           </Box>
         )}
-
-        <ModalFooter
-          showSenderModal={showSenderModal}
-          setShowSenderModal={setShowSenderModal}
-        />
+        <ScaleFade initialScale={0.9} in={!!state.commesse_selezionate.length}>
+          <ModalFooter
+            showSenderModal={showSenderModal}
+            setShowSenderModal={setShowSenderModal}
+          />
+        </ScaleFade>
       </Box>
 
       <Box

@@ -2,6 +2,11 @@ import axios from "axios";
 import { Auth } from "aws-amplify";
 
 //function to log in console the user token
+export async function logUserToken() {
+  const data = await Auth.currentSession();
+  const jwtToken = data.getAccessToken().getJwtToken();
+  // console.log("ACTUAL TOKEN", jwtToken);
+}
 
 // function to GET an array with all users timesheet
 // suitable only for backoffice users
@@ -112,12 +117,11 @@ export async function saveUserTimesheet(payload, type, id) {
   console.log(payload, type, id);
   try {
     const url = `${process.env.REACT_APP_BASE_URL}/user/timesheet${"/" + id}`;
-    const url2 = `${process.env.REACT_APP_BASE_URL}/user/timesheet`;
     const data = await Auth.currentSession();
     const jwtToken = data.getAccessToken().getJwtToken();
     // console.log(jwtToken);
     const response = type
-      ? await axios.post(url2, payload, {
+      ? await axios.post(url, payload, {
           headers: {
             Authorization: `Bearer ${jwtToken}`,
             "Content-type": "application/json",
@@ -174,19 +178,3 @@ export async function declineTimesheet(id, note) {
     console.error(error);
   }
 }
-export const getUserInfo = async () => {
-  try {
-    const url = `${process.env.REACT_APP_BASE_URL}/user/user`;
-    const data = await Auth.currentSession();
-    const jwtToken = data.getAccessToken().getJwtToken();
-    const response = await axios.get(url, {
-      headers: {
-        Authorization: `Bearer ${jwtToken}`,
-        "Content-type": "application/json",
-      },
-    });
-    return response.data;
-  } catch (error) {
-    console.error(error);
-  }
-};

@@ -48,33 +48,19 @@ export default function StoricoTimesheets() {
             variant={v}
             size={"lg"}
             minH="50px"
-            rightIcon={<BsArrowRight />}
+            rightIcon={
+              state.storico_timesheets.length > 0 ? (
+                <BsArrowRight />
+              ) : (
+                <IoIosAddCircleOutline />
+              )
+            }
           >
-            Continua a compilare
+            {state.storico_timesheets.length > 0
+              ? "Continua a compilare"
+              : "Aggiungi timesheet"}
           </Button>
         )}
-      {!state.timesheet_salvati && (
-        <Button
-          w="90%"
-          position={state.user_group !== "Backoffice" ? "sticky" : "static"}
-          top={state.user_group !== "Backoffice" ? "10px" : "auto"}
-          zIndex={state.user_group !== "Backoffice" ? "3" : "auto"}
-          onClick={() => {
-            dispatch({
-              type: "SET_TIMESHEET_MODAL",
-              payload: true,
-            });
-          }}
-          colorScheme={"telegram"}
-          my="2"
-          variant={v}
-          size={"lg"}
-          minH="50px"
-          rightIcon={<BsArrowRight />}
-        >
-          Inizia a compilare
-        </Button>
-      )}
       {state.timesheet_salvati && (
         <Box
           w="90%"
@@ -180,13 +166,7 @@ export default function StoricoTimesheets() {
           <SimpleGrid
             zIndex={1}
             position={"sticky"}
-            top={
-              !!state.timesheet_salvati
-                ? state.user_group !== "Backoffice"
-                  ? "144px"
-                  : "90px"
-                : "auto"
-            }
+            top={state.user_group !== "Backoffice" ? "144px" : "90px"}
             spacingY={3}
             columns={{
               base: 4,

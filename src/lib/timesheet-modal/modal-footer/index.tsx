@@ -156,10 +156,6 @@ export default function ModalFooter({
               state?.timesheet_salvati?._id && state.timesheet_salvati._id
             ).then((res: any) => {
               if (res.status === 200) {
-                dispatch({
-                  type: "SET_TIMESHEET_SALVATI",
-                  payload: res.data,
-                });
                 setIsLoading(false);
                 setShowSenderModal(false);
                 toast({

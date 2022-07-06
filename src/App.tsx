@@ -21,7 +21,6 @@ import TimesheetModal from "./lib/timesheet-modal";
 import {
   getAllUserTimesheets,
   getCommesse,
-  getUserInfo,
   getUserTimesheet,
 } from "./utils/apiCalls";
 import { checkGroup } from "./utils/utils";
@@ -35,18 +34,37 @@ function App() {
   const [state, dispatch] = useStateValue();
   const progressbg = useColorModeValue("green.500", "pink.500");
   const toast = useToast();
-  const setUserInfo = async () => {
-    dispatch({
-      type: "SET_USER",
-      payload: await getUserInfo(),
-    });
-    dispatch({
-      type: "SET_LOADING_MESSAGE",
-      payload: {
-        message: "Caricando informazioni utente..",
-        percent: 10,
-      },
-    });
+  const setUserInfo = async (currentUserInfo: {
+    attributes: { [x: string]: string };
+  }) => {
+    if (currentUserInfo) {
+      const userInfoObj = {
+        name: currentUserInfo.attributes["name"],
+        surname: currentUserInfo.attributes["family_name"],
+        email: currentUserInfo.attributes["email"],
+        internalcode: currentUserInfo.attributes["custom:internal_code"],
+        projectcode:
+          currentUserInfo.attributes["custom:project_code"].split("-"),
+        projectname:
+          currentUserInfo.attributes["custom:project_name"].split("-"),
+        projectcustomer:
+          currentUserInfo.attributes["custom:customer_name"].split("-"),
+      };
+
+      setTimeout(() => {
+        dispatch({
+          type: "SET_USER",
+          payload: userInfoObj,
+        });
+      }, 0);
+      dispatch({
+        type: "SET_LOADING_MESSAGE",
+        payload: {
+          message: "Caricando informazioni utente..",
+          percent: 10,
+        },
+      });
+    }
   };
   const commesseCall = async () => {
     const data2 = await Auth.currentSession();
@@ -83,11 +101,7 @@ function App() {
   };
 
   const setSavedTimesheets = async () => {
-    if (
-      !!state.timesheetModalState &&
-      !!state.timesheetModalState.month &&
-      !!state.timesheetModalState.year
-    ) {
+    if (!!state.timesheetModalState) {
       const month = state.timesheetModalState.month;
       const year = state.timesheetModalState.year;
       const monthString = new Date(year, month, 0).toLocaleString("it-IT", {
@@ -96,12 +110,10 @@ function App() {
 
       await getUserTimesheet(monthString)
         .then((data) => {
-          if (data !== null) {
-            dispatch({
-              type: "SET_TIMESHEET_SALVATI",
-              payload: data,
-            });
-          }
+          dispatch({
+            type: "SET_TIMESHEET_SALVATI",
+            payload: data,
+          });
           dispatch({
             type: "SET_LOADING_MESSAGE",
             payload: {
@@ -133,13 +145,17 @@ function App() {
   };
 
   const initializeApplication = async () => {
-    await Promise.all([
-      setUserInfo(),
-      commesseCall(),
-      setStoricoTimesheets(),
-      setSavedTimesheets(),
-      setUserGroup(),
-    ]);
+    const currentUserInfo = await Auth.currentUserInfo();
+    // call all the functions asynchronously
+    if (currentUserInfo) {
+      await Promise.all([
+        setUserInfo(currentUserInfo),
+        commesseCall(),
+        setStoricoTimesheets(),
+        setSavedTimesheets(),
+        setUserGroup(),
+      ]);
+    }
   };
 
   useEffect(() => {
@@ -191,8 +207,7 @@ function App() {
       <LoadingScreen />
       {!state.isLoading && state.user && state.storico_timesheets && (
         <Box height={"100vh"} fontSize="xl">
-          {state?.timesheet_salvati?.status === "DRAFT" ||
-          !state.timesheet_salvati ? (
+          {state?.timesheet_salvati?.status === "DRAFT" ? (
             <TimesheetModal />
           ) : null}
           <Box
